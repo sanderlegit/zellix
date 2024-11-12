@@ -1,0 +1,9 @@
+layout {
+	tab focus=true {
+		pane {
+			name "editor"
+			command "nu"
+			args "-c" "nu ($env.ZELLIX_PATH + \"/helix.nu\")"
+		}
+	}
+}
