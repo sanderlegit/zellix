@@ -8,16 +8,25 @@ def setup-files [session] {
   mkdir $path
 }
 
-def main [module_path, session?] {
+def main [module_path, filepath?, session?] {
   # Find the path of the zelix command.
   let path = $env.FILE_PWD
   $env.ZELLIX_PATH = $path
 
-  # Set a default session if no session name was given.
   let session = match $session {
-    null => (random chars --length 10) # Create a crazy, random set of characters to hopefully prevent overlaps,
+    # Create a crazy, random set of characters for the session name
+    null => (random chars --length 10)
+
+    # Just use what was put for the session name.
     _ => $session
   }
+
+  # Allow for zellix to function like the `hx` command, accepting a filepath if wanted.
+  let filepath = match $filepath {
+    null => ("./"),
+    _ => $filepath
+  }
+  $env.ZELLIX_OPEN = $filepath
 
   # Create useful environment variables for users.
   $env.ZELLIX_SESSION = $session
