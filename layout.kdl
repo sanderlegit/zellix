@@ -7,3 +7,6 @@ layout {
 		}
 	}
 }
+keybinds clear-defaults=true {
+	
+}
