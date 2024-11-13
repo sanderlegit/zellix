@@ -1,10 +1,29 @@
 # Zellix
 A Simple, [NuShell](https://nushell.sh) Based "Plugin" system for Helix using the power of Zellij!
+![screenshot](screenshot.png)
 
 # What does it do?
 Under the hood, it creates a special zellij session, focued on using auto-closing panes to support windows in helix.
 
-# How to use it?
+# Usage
+If you just want to try out zellix, clone the repository, ensure you have `zellij` and `helix` installed.
+Then, if you want to try out my configuration, you will need at least one of either `yazi` or `aichat`.
+You'll want to edit your helix configuration to use the following in a keybind, or you can run it in helix by pasting it.
+`:sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- nu $ZELLIX_MOD/yazi.nu` Will run the yazi program, and replacing `yazi.nu` with `ai.nu`
+will run the AI Moudle.
+
+if you want to try how i use it, the following will add keybinds for both yazi and the ai module.
+```toml
+[keys.normal.space.f]
+f = "file_picker"
+t = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- nu $ZELLIX_MOD/yazi.nu"
+
+[keys.normal.space.l]
+a = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- nu $ZELLIX_MOD/ai.nu"
+```
+
+## Example Configuration
+Personally, I use nix with this, but the configuration is still very simple.
 Look at the [example](example), which I use for my daily driver with helix using 
 [my dotfile configuration](https://github.com/TheEmeraldBee/PixelNix) with nixos and nix-darwin!
 
