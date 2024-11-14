@@ -35,7 +35,6 @@ def main [module_path, filepath?, session?] {
 
   # Set up the tmp folder for the zellix session.
   setup-files $session
-  nu ($module_path + "/init.nu")
 
   # Set Layout And Config Paths for the zellij session
   let layout_path = $env.ZELLIX_PATH + "/layout.kdl"
