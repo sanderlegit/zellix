@@ -44,6 +44,12 @@ For information on how to create plugins, check out the [wiki](https://github.co
 At the time of writing this, there is no plugin system for helix, and I dislike the configuration of neovim,
 so I created this to satiate my desire for more than just an editor systems that can still be controlled through my editor.
 
+# Wrote something awesome?
+Put in a pull request adding a link to a repository containing the code, and I'll look at pulling it in!
+
+# Awesome zellix
+- **Crickets** Get writing some awesome stuff.
+
 # Contributing
 At this time, the [example](example) directory is not accepting pull requests,
 as it is my personal usage of this system. But the core itself is welcome to changes to support more custom systems, as well
