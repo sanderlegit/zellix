@@ -10,7 +10,11 @@ In order to actually run the system, you must run the shell file with the follow
 `module`: The location of the actual module path, this is just a folder, which will be added to the environment to support using any module folder.
 `path`: An *optional* path for helix to open into. This is the same as typing `hx {file}`
 
-A simple example run, if currently inside of the cloned repository, you can run the program like this `nu ./run.nu example/`. This will run the code with the example folder as the module.
+A simple example run, if currently inside of the cloned repository, you can run the program like this 
+```nu
+nu ./run.nu example/
+```
+This will run the code with the example folder as the module.
 
 If you just want to try out zellix, clone the repository, ensure you have `zellij` and `helix` installed.
 Then, if you want to try out my configuration, you will need at least one of either `yazi` or `aichat`.
