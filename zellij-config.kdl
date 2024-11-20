@@ -2,4 +2,16 @@ on_force_close "quit"
 session_serialization false
 theme "catppuccin-mocha"
 pane_frames false
-keybinds clear-defaults=true {}
+keybinds clear-defaults=true {
+	normal {
+		bind "Ctrl l" { FocusNextPane; }
+		bind "Ctrl h" { FocusPreviousPane; }
+	}
+	resize {
+		bind "Enter" "Esc" { SwitchToMode "Normal"; }
+		bind "h" "Left" { Resize "Increase Left"; }
+		bind "j" "Down" { Resize "Increase Down"; }
+	    bind "k" "Up" { Resize "Increase Up"; }
+	    bind "l" "Right" { Resize "Increase Right"; }
+    }
+}
