@@ -6,8 +6,18 @@ def "main handle-inner" [] {
   input -n 1 -s
 }
 
+def "main last handle-inner" [] {
+  try { fzf-make -r }
+  print "Press <Any> To Continue!"
+  input -n 1 -s
+}
+
 def "main wait" [] {
   zellij run -f -c -- nu $"($env.ZELLIX_MOD)/makefile.nu" handle-inner
+}
+
+def "main last wait" [] {
+  zellij run -f -c -- nu $"($env.ZELLIX_MOD)/makefile.nu" last handle-inner
 }
 
 def "main last" [] {
