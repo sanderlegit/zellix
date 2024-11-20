@@ -1,17 +1,13 @@
 export def init-makefile [] {}
 
-def "handle" [] {
-  fzf-make
+def "main handle-inner" [] {
+  try { fzf-make }
   print "Press <Any> To Continue!"
   input -n 1 -s
 }
 
-def "main last" [] {
-  zellij run -i -c -- fzf-make -r
-}
-
 def "main wait" [] {
-  zellij run -i -c -- handle
+  zellij run -i -c -- nu $"($env.ZELLIX_MOD)/makefile.nu" handle-inner
 }
 
 def main [] {
