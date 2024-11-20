@@ -7,9 +7,13 @@ def "main handle-inner" [] {
 }
 
 def "main wait" [] {
-  zellij run -i -c -- nu $"($env.ZELLIX_MOD)/makefile.nu" handle-inner
+  zellij run -f -c -- nu $"($env.ZELLIX_MOD)/makefile.nu" handle-inner
+}
+
+def "main last" [] {
+  zellij run -f -c -- fzf-make -r
 }
 
 def main [] {
-  zellij run -i -c -- fzf-make
+  zellij run -f -c -- fzf-make
 }
