@@ -1,5 +1,6 @@
 use yazi.nu *
 use ai.nu *
+use makefile.nu *
 
 # Use this file to initialize any plugins and systems you need!
 # 
@@ -8,4 +9,5 @@ use ai.nu *
 def main [] {
   init-yazi
   init-ai
+  init-makefile
 }
