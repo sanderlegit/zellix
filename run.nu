@@ -1,3 +1,4 @@
+#!/usr/bin/env nu
 def setup-files [session] {
   let path = "/tmp/zellix/" + $session
 
