@@ -6,13 +6,5 @@ keybinds clear-defaults=true {
 	normal {
 		bind "Ctrl l" { FocusNextPane; }
 		bind "Ctrl h" { FocusPreviousPane; }
-		bind "Ctrl ;" { SwitchToMode "Resize"; }
 	}
-	resize {
-		bind "Enter" "Esc" { SwitchToMode "Normal"; }
-		bind "h" "Left" { Resize "Increase Left"; }
-		bind "j" "Down" { Resize "Increase Down"; }
-	    bind "k" "Up" { Resize "Increase Up"; }
-	    bind "l" "Right" { Resize "Increase Right"; }
-    }
 }
