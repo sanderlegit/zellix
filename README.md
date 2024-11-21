@@ -7,9 +7,15 @@ Under the hood, it creates a special zellij session, focued on using auto-closin
 
 # Installation
 If you don't want to run the directory directly, you can install it using `ln` and `chmod`. First, navigate to the directory where `run.nu` is located.
-Run `chmod +x run.sh` in your terminal to make the file runnable. Next, use `ln -s run.sh ~/.local/bin/zellix` to link run.nu to your
-local bin directory, then, to run, just use `zellix path/to/module` to run instead of having to use `nu ./run.nu path/to/module`.
-I personally prefer to just have an alias that does this, but if you prefer to link it to your bin folder, feel free to!
+Run 
+```nu
+chmod +x run.sh
+```
+in your terminal to make the file runnable. Next, use 
+```nu
+ln -s run.sh ~/.local/bin/zellix`
+```
+to link run.nu to your local bin directory, then, to run, just use `zellix path/to/module` to run instead of having to use `nu ./run.nu path/to/module`.
 
 # Usage
 In order to actually run the system, you must run the shell file with the following parameters.
