@@ -1,6 +1,7 @@
 use yazi.nu *
 use ai.nu *
 use makefile.nu *
+use bacon.nu *
 
 # Use this file to initialize any plugins and systems you need!
 # 
@@ -10,4 +11,5 @@ def main [] {
   init-yazi
   init-ai
   init-makefile
+  init-bacon
 }
