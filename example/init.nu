@@ -1,4 +1,6 @@
 use yazi.nu *
+use broot.nu *
+use fzf.nu *
 use ai.nu *
 use makefile.nu *
 use bacon.nu *
@@ -12,4 +14,6 @@ def main [] {
   init-ai
   init-makefile
   init-bacon
+  init-broot
+  init-fzf
 }
