@@ -1,6 +1,6 @@
 on_force_close "quit"
 session_serialization false
-theme "catppuccin-mocha"
+theme "ansi"
 pane_frames false
 keybinds clear-defaults=true {
 	normal {
