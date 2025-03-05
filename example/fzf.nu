@@ -7,9 +7,9 @@ def main [] {
   let current_path = open ($env.ZELLIX_TMP + "/fzf")
   
   # Set up ripgrep command and run fzf with ripgrep integration
-  let rg_prefix = "rg --column --line-number --no-heading --color=always --smart-case"
+  # let rg_prefix = "rg --column --line-number --no-heading --color=always --smart-case"
   let paths = (do {
-    ^fzf --ansi --bind "start:reload:rg --column --line-number --no-heading --color=always --smart-case {q}" --bind "change:reload:sleep 0.1; rg --column --line-number --no-heading --color=always --smart-case {q} || true" --delimiter ":" --preview "bat --color=always {1} --highlight-line {2}" --preview-window "up,60%,border-bottom,+{2}+3/3,~3"
+    ^fzf --ansi --bind "start:reload:rg --column --line-number --no-heading --color=always --smart-case {q}" --bind "change:reload:sleep 0.1; rg --column --line-number --no-heading --color=always --smart-case {q} || true" --delimiter ":" --height "100%" --preview "bat --color=always {1} --highlight-line {2}" --preview-window "up,60%,border-bottom,+{2}+3/3,~3"
   } | complete).stdout
   
   # Check if no files were selected, and exit if none are
