@@ -1,6 +1,6 @@
 def main [] {
   let paths = (do {
-    sk --ansi --cmd $"rg --column --line-number --no-heading --color=always --smart-case ." --delimiter ":" --height "100%" --preview "bat --color=always {1} --highlight-line {2}" --preview-window "up:60%:border"
+    sk --ansi --cmd $"rg --column --line-number --no-heading --color=always --smart-case --hidden ." --delimiter ":" --height "100%" --preview "bat --color=always {1} --highlight-line {2}" --preview-window "up:60%:border"
   } | complete).stdout
 
   
