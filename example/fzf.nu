@@ -1,8 +1,8 @@
 def main [] {
+    # sk --ansi --cmd "rg --column --line-number --no-heading --color=always --smart-case --hidden ." --delimiter ":" --preview "bat --color=always {1} --highlight-line {2}" --preview-window "up:60%:border"
   let paths = (do {
-    sk --ansi --cmd $"rg --column --line-number --no-heading --color=always --smart-case --hidden ." --delimiter ":" --height "100%" --preview "bat --color=always {1} --highlight-line {2}" --preview-window "up:60%:border"
+    sk --ansi -i -c 'ag --color "{}"' --preview $"($env.PREVIEW_SH) {}"
   } | complete).stdout
-
   
   # Check if no files were selected, and exit if none are
   if ($paths | is-empty) {
