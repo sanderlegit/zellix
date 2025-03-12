@@ -15,5 +15,4 @@ def main [] {
   init-makefile
   init-bacon
   init-broot
-  init-fzf
 }
