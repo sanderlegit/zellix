@@ -9,24 +9,18 @@
 #                          Used to determine the starting directory for Yazi. If null or omitted, uses PWD.
 def main [buffer_path: string] {
 
-    # --- 1. Determine Starting Directory for Yazi ---
-    let start_dir = if $buffer_path == null or ($buffer_path == "[scratch]") { # <-- Correct check for null/empty/scratch
+    let start_dir = if $buffer_path == null or ($buffer_path == "[scratch]") {
         # If no path provided, or it's a scratch buffer, use the current working directory
         $env.PWD
-        print $"Start dir was scratch or empty $(buffer_path)"
-        sleep 1sec
     } else {
         # Try to resolve the buffer path relative to PWD
         # Use path expand for robustness (handles ~, .., .)
         let full_path = ($env.PWD | path join $buffer_path) | path expand --no-symlink
 
-        # # Check if the resolved path exists
+        # Check if the resolved path exists
         if not ($full_path | path exists) {
             # Fallback to PWD if buffer_path doesn't exist
-            print $"Warning: Buffer path '($buffer_path)' resolved to '($full_path)' which does not exist. Starting Yazi in ($env.PWD)." stderr
             $env.PWD
-            # Wait so error stays visible
-            sleep 1sec
         } else {
             $full_path 
         }
