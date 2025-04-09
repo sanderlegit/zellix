@@ -10,7 +10,6 @@ use bacon.nu *
 # The main use of this should be to
 # create files that would be used for config/data.
 def main [] {
-  init-yazi
   init-ai
   init-makefile
   init-bacon
